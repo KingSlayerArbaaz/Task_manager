@@ -1,0 +1,75 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.to_do_app"
+    compileSdk = 34
+    ndkVersion = "25.1.8937393"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled true
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.to_do_app"
+        minSdk = 23
+        targetSdk = 34
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        release {
+            // Make sure to replace these with your actual keystore details
+            storeFile file('release-key.jks') 
+            storePassword 'arbaaz@132'
+            keyAlias 'your_key_alias'
+            keyPassword 'arbaaz@132'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    // Add the desugaring config here
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:1.12.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"
+    // Add the desugaring library
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:1.2.2"
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.window:window-java:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+}

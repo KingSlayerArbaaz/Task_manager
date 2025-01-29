@@ -1,0 +1,9 @@
+# Flutter-related
+**/Flutter/ephemeral/
+**/Pods/
+
+# Xcode-related
+**/dgph
+**/xcuserdata/
+# Add this line to your .gitignore
+android/app/release-key.jks

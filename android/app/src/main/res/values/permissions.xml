@@ -1,0 +1,5 @@
+<resources>
+    <string name="android.permission.POST_NOTIFICATIONS">Post Notifications</string>
+    <string name="android.permission.SCHEDULE_EXACT_ALARM">Schedule Exact Alarm</string>
+    <string name="android.permission.USE_EXACT_ALARM">Use Exact Alarm</string>
+</resources>
