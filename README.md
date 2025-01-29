@@ -27,7 +27,7 @@ Task_App is a simple and efficient task management application that helps users 
 ### Installation
 Clone the repository:
 ```sh
-git clone https://github.com/yourusername/Task_App.git
+git clone https://github.com/KingSlayerArbaaz/Task_manager.git
 cd Task_App
 ```
 Install dependencies:
@@ -66,7 +66,7 @@ Make sure the following permissions are added to `AndroidManifest.xml`:
 3. Test with `flutter build apk --release` and install on a real device.
 
 ## 📬 Contact
-For issues, feel free to open an issue on GitHub or reach out to me at [arbaazbaig98.com].
+For issues, feel free to open an issue on GitHub or reach out to me at arbaazbaig98.com.
 
 Happy Coding! 🚀
 
