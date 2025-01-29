@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do_app/screens/task_list_screen.dart';
-// import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/data/latest.dart' as tz;
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // tz.initializeTimeZones();
+  tz.initializeTimeZones();
   final isDarkMode = await _loadThemePreference();
   runApp(MyApp(isDarkMode: isDarkMode));
 }

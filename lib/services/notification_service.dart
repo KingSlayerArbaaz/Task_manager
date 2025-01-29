@@ -29,13 +29,14 @@ class NotificationService {
     }
 
     // Request exact alarm permission
-    if (await Permission.systemAlertWindow.isDenied) {
-      await Permission.systemAlertWindow.request();
-    }
+    // if (await Permission.systemAlertWindow.isDenied) {
+    //   await Permission.systemAlertWindow.request();
+    // }
   }
   
   
 Future<void> scheduleNotification(int id, String title, DateTime dueDate) async {
+  
   final tzDateTime = tz.TZDateTime.from(dueDate.subtract(const Duration(hours: 1)), tz.local);
   print('Scheduled notification at: $tzDateTime');
 
@@ -51,8 +52,13 @@ Future<void> scheduleNotification(int id, String title, DateTime dueDate) async 
             'task_channel',
             'Tasks',
             channelDescription: 'Reminders for your tasks',
+            importance: Importance.max,  // Set importance to high
+            priority: Priority.high,
+            playSound: true,
+            fullScreenIntent: true,
           ),
         ),
+        
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
         uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
       );
