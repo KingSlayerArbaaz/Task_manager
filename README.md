@@ -66,7 +66,7 @@ Make sure the following permissions are added to `AndroidManifest.xml`:
 3. Test with `flutter build apk --release` and install on a real device.
 
 ## 📬 Contact
-For issues, feel free to open an issue on GitHub or reach out to me at arbaazbaig98.com.
+For issues, feel free to open an issue on GitHub or reach out to me at arbaazbaig98gmail.com.
 
 Happy Coding! 🚀
 
