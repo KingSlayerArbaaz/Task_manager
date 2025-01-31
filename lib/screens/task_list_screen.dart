@@ -24,9 +24,6 @@ class _TaskListScreenState extends State<TaskListScreen> {
   List<TaskModel> _tasks = [];
   bool _isDarkMode = false;
   List<TaskModel> _filteredTasks = [];
-  // String _searchQuery = '';
-  // String _selectedFilter = 'All'; // Default filter is 'All'
-  // String _selectedCategory = 'Other'; // Default category is 'All'
   List<String> selectedFilter = [];
   List<String> selectedCategory = [];
 
@@ -137,7 +134,7 @@ setState(() {
         dueDate: dueDate,
         category: category);
     setState(() => _tasks.add(newTask));
-    await _storageService.saveTasks(_tasks);
+    await _storageService.saveTasks(_tasks); // Save the tasks after adding a new task
     _notificationService.showImmediateNotification(_tasks.length - 1,title);
     _notificationService.scheduleNotification(
       _tasks.length - 1,
@@ -173,7 +170,7 @@ setState(() {
 
             // Schedule notification after saving the task
             await _notificationService.scheduleNotification(
-              _tasks.length - 1, // Task ID or index, ensure correct ID is used
+              _tasks.length - 1, // Task ID to ensure correct ID is used
               task.title,
               task.dueDate,
             );
@@ -326,7 +323,8 @@ GestureDetector(
     );
   }
 
-  Widget _buildStatItem(String label, int value) {
+  Widget _buildStatItem(String label, int value) // Display the category here
+   {
     return Column(
       children: [
         Text(

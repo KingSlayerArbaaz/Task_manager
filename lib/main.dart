@@ -6,7 +6,6 @@ import 'package:timezone/data/latest.dart' as tz;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
   tz.initializeTimeZones();
   final isDarkMode = await _loadThemePreference();
   runApp(MyApp(isDarkMode: isDarkMode));
